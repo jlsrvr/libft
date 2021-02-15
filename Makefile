@@ -1,4 +1,14 @@
-# HEADER
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/02/15 15:24:55 by jrivoire          #+#    #+#              #
+#    Updated: 2021/02/15 16:26:36 by jrivoire         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME			=	libft.a
 
@@ -6,70 +16,66 @@ CC				=	gcc
 
 OBJS			=	$(SRCS:.c=.o)
 
-SRCS			= 	ft_isdigit.c \
-					ft_memcpy.c \
-					ft_split.c \
-					ft_strmapi.c \
-					ft_toupper.c \
-					ft_atoi.c \
-					ft_isprint.c \
-					ft_memmove.c \
-					ft_strchr.c \
-					ft_strncmp.c \
-					ft_bzero.c \
-					ft_itoa.c \
-					ft_memset.c \
-					ft_strdup.c \
-					ft_strnstr.c \
-					ft_calloc.c \
-					ft_putchar_fd.c \
-					ft_strjoin.c \
-					ft_strrchr.c \
-					ft_isalnum.c \
-					ft_memccpy.c \
-					ft_putendl_fd.c \
-					ft_strlcat.c \
-					ft_strtrim.c \
-					ft_isalpha.c \
-					ft_memchr.c \
-					ft_putnbr_fd.c \
-					ft_strlcpy.c \
-					ft_substr.c \
-					ft_isascii.c \
-					ft_memcmp.c \
-					ft_putstr_fd.c \
-					ft_strlen.c \
-					ft_tolower.c
+IDIR			=	headers/
 
-BONUS_OBJS		=	$(BONUS_SRCS:.c=.o)
-
-BONUS_SRCS = 		ft_lstadd_back.c \
-					ft_lstadd_front.c \
-					ft_lstclear.c \
-					ft_lstdelone.c \
-					ft_lstiter.c \
-					ft_lstlast.c \
-					ft_lstmap.c \
-					ft_lstnew.c \
-					ft_lstsize.c
+SRCS			= 	char/ft_isalnum.c \
+					char/ft_isalpha.c \
+					char/ft_isascii.c \
+					char/ft_isdigit.c \
+					char/ft_isprint.c \
+					char/ft_tolower.c \
+					char/ft_toupper.c \
+					display/ft_putchar_fd.c \
+					display/ft_putendl_fd.c \
+					display/ft_putnbr_fd.c \
+					display/ft_putstr_fd.c \
+					integer/ft_itoa.c \
+					list/ft_lstadd_back.c \
+					list/ft_lstadd_front.c \
+					list/ft_lstclear.c \
+					list/ft_lstdelone.c \
+					list/ft_lstiter.c \
+					list/ft_lstlast.c \
+					list/ft_lstmap.c \
+					list/ft_lstnew.c \
+					list/ft_lstsize.c \
+					memory/ft_bzero.c \
+					memory/ft_calloc.c \
+					memory/ft_memccpy.c \
+					memory/ft_memchr.c \
+					memory/ft_memcmp.c \
+					memory/ft_memcpy.c \
+					memory/ft_memmove.c \
+					memory/ft_memset.c \
+					string/ft_atoi.c \
+					string/ft_split.c \
+					string/ft_strchr.c \
+					string/ft_strdup.c \
+					string/ft_strjoin.c \
+					string/ft_strlcat.c \
+					string/ft_strlcpy.c \
+					string/ft_strlen.c \
+					string/ft_strmapi.c \
+					string/ft_strncmp.c \
+					string/ft_strnstr.c \
+					string/ft_strrchr.c \
+					string/ft_strtrim.c \
+					string/ft_substr.c
 
 RM				=	rm -f
 
 FLAGS			=	-Wall -Wextra -Werror
 
 .c.o:
-	$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(FLAGS) -I$(IDIR) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-bonus:		$(NAME) $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
-
 all:		$(NAME)
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 fclean: 	clean
 	$(RM) $(NAME)
