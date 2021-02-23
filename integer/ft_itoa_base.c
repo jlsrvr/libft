@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:27:16 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/02/23 17:22:21 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:13:18 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ static int		check_base(char *base)
 	return (1);
 }
 
-static	int		len_num(int n)
+static	size_t	len_num(long int n)
 {
-	size_t			len;
-	unsigned int	nbr;
+	size_t				len;
+	unsigned long int	nbr;
 
 	len = 0;
 	if (n == 0)
@@ -57,7 +57,7 @@ static	int		len_num(int n)
 	return (len + 1);
 }
 
-static	void	store_num(unsigned int nbr, char *num,
+static	void	store_num(unsigned long int nbr, char *num,
 							size_t *index, char *base)
 {
 	size_t basetype;
@@ -67,19 +67,19 @@ static	void	store_num(unsigned int nbr, char *num,
 		num[(*index)++] = base[nbr];
 	else
 	{
-		store_num((int)(nbr / basetype), num, index, base);
-		store_num((int)(nbr % basetype), num, index, base);
+		store_num((long int)(nbr / basetype), num, index, base);
+		store_num((long int)(nbr % basetype), num, index, base);
 	}
 	num[*index] = 0;
 	return ;
 }
 
-char			*ft_itoa_base(int n, char *base)
+char			*ft_itoa_base(long int n, char *base)
 {
-	char			*num;
-	size_t			index;
-	unsigned int	nbr;
-	size_t			basetype;
+	char				*num;
+	size_t				index;
+	unsigned long int	nbr;
+	size_t				basetype;
 
 	num = NULL;
 	basetype = ft_strlen(base);
