@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 20:59:31 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/11/30 21:00:21 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:16:10 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t index;
+	size_t	index;
 
 	index = 0;
 	while ((s1[index] || s2[index]) && index < n)

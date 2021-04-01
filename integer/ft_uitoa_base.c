@@ -6,16 +6,16 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:27:16 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/04/01 11:21:49 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:42:45 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		check_base(char *base)
+static int	check_base(char *base)
 {
-	int index;
-	int comp;
+	int	index;
+	int	comp;
 
 	index = 0;
 	while (base[index])
@@ -36,7 +36,7 @@ static int		check_base(char *base)
 
 static	size_t	len_num(uintmax_t nbr, size_t basetype)
 {
-	size_t				len;
+	size_t	len;
 
 	len = 0;
 	if (nbr == 0)
@@ -52,7 +52,7 @@ static	size_t	len_num(uintmax_t nbr, size_t basetype)
 static	void	store_num(uintmax_t nbr, char *num,
 							size_t *index, char *base)
 {
-	size_t basetype;
+	size_t	basetype;
 
 	basetype = ft_strlen(base);
 	if (nbr <= basetype - 1 && nbr >= 0)
@@ -66,7 +66,7 @@ static	void	store_num(uintmax_t nbr, char *num,
 	return ;
 }
 
-char			*ft_uitoa_base(uintmax_t n, char *base)
+char	*ft_uitoa_base(uintmax_t n, char *base)
 {
 	char				*num;
 	size_t				index;
@@ -76,7 +76,8 @@ char			*ft_uitoa_base(uintmax_t n, char *base)
 	basetype = ft_strlen(base);
 	if (basetype > 1 && check_base(base))
 	{
-		if (!(num = malloc(sizeof(*num) * (len_num(n, basetype) + 1))))
+		num = malloc(sizeof(*num) * (len_num(n, basetype) + 1));
+		if (!num)
 			return (NULL);
 		index = 0;
 		store_num(n, num, &index, base);

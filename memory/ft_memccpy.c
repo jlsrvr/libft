@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 23:09:08 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/12/07 23:09:43 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:57:11 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	char	*csrc;
 	char	*cdest;
 
-	csrc = (char*)src;
-	cdest = (char*)dest;
+	csrc = (char *)src;
+	cdest = (char *)dest;
 	index = 0;
 	while (index < n)
 	{

@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/29 12:41:34 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/12/10 21:32:05 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:27:13 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int nb;
+	unsigned int	nb;
 
 	nb = n;
 	if (n < 0)
