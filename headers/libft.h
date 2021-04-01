@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:26:22 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/04/01 11:28:22 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 16:20:20 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef struct s_list
 {
