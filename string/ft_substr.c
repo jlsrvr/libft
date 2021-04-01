@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:00:08 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/11/30 21:04:38 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:20:20 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if ((size_t)start > ft_strlen(s))
 		return (ft_strdup(""));
-	if (!(dest = malloc(sizeof(*dest) * (len + 1))))
+	dest = malloc(sizeof(*dest) * (len + 1));
+	if (!dest)
 		return (NULL);
 	index = 0;
 	while (s[index + start] && (len != index))

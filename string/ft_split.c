@@ -6,16 +6,16 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 16:25:31 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/01/13 17:16:55 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 12:16:34 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
-	size_t counter;
-	size_t index;
+	size_t	counter;
+	size_t	index;
 
 	counter = 0;
 	index = 0;
@@ -33,8 +33,8 @@ static int		count_words(char const *s, char c)
 
 static	char	*copy_word(char const *s, size_t *begin, char c)
 {
-	size_t start;
-	size_t end;
+	size_t	start;
+	size_t	end;
 
 	start = *begin;
 	end = start;
@@ -67,17 +67,16 @@ static	char	**protection(char **dest)
 	return (dest);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**dest;
 	size_t	index;
 	size_t	di;
 
 	if (!s || !*s)
-	{
 		return (protection(dest = NULL));
-	}
-	if (!(dest = malloc(sizeof(*dest) * (count_words(s, c) + 1))))
+	dest = malloc(sizeof(*dest) * (count_words(s, c) + 1));
+	if (!dest)
 		return (NULL);
 	index = 0;
 	di = 0;
@@ -85,7 +84,8 @@ char			**ft_split(char const *s, char c)
 	{
 		if (s[index] != c)
 		{
-			if (!(dest[di++] = copy_word(s, &index, c)))
+			dest[di] = copy_word(s, &index, c);
+			if (!dest[di++])
 				return (free_words(dest));
 		}
 		else

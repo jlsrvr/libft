@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 21:00:15 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/12/28 21:45:29 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:44:32 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *temp;
-	t_list *my_lst;
+	t_list	*temp;
+	t_list	*my_lst;
 
 	if (!lst || !del)
 		return ;

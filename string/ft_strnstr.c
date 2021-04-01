@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 22:16:11 by jrivoire          #+#    #+#             */
-/*   Updated: 2020/12/10 23:31:43 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 14:18:36 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	index = 0;
 	if (!*needle)
-		return ((char*)haystack);
+		return ((char *)haystack);
 	while (haystack[index] && index < len)
 	{
 		look = 0;
 		while (haystack[(index + look)] == needle[look]
-				&& needle[look] && (index + look) < len)
+			&& needle[look] && (index + look) < len)
 			look++;
 		if (!needle[look])
-			return (&((char*)haystack)[index]);
+			return (&((char *)haystack)[index]);
 		index++;
 	}
 	return (NULL);

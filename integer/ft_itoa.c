@@ -6,13 +6,13 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:27:16 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/01/21 15:19:43 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:39:30 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		len_num(int n)
+static	int	len_num(int n)
 {
 	size_t			len;
 	unsigned int	nbr;
@@ -48,13 +48,14 @@ static	void	store_num(unsigned int nbr, char *num, size_t *index)
 	return ;
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*num;
 	size_t			index;
 	unsigned int	nbr;
 
-	if (!(num = malloc(sizeof(*num) * (len_num(n) + 1))))
+	num = malloc(sizeof(*num) * (len_num(n) + 1));
+	if (!num)
 		return (NULL);
 	index = 0;
 	if (n < 0)

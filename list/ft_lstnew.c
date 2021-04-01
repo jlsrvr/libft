@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/17 16:28:32 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/01/15 19:06:28 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/04/01 11:53:33 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list *new_element;
+	t_list	*new_element;
 
 	new_element = malloc(sizeof(*new_element));
 	if (!new_element)
