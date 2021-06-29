@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:26:22 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/06/29 11:48:06 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/06/29 21:02:56 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 					void (*del)(void *));
 t_list			*ft_lstnew(void *content);
 
+void			free_str_array(char **str_array);
 void			ft_bzero(void *ptr, size_t num);
 void			*ft_calloc(size_t count, size_t size);
 void			ft_lstadd_back(t_list **alst, t_list *new);

@@ -6,7 +6,7 @@
 #    By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/15 15:24:55 by jrivoire          #+#    #+#              #
-#    Updated: 2021/06/29 11:52:27 by jrivoire         ###   ########.fr        #
+#    Updated: 2021/06/29 20:48:27 by jrivoire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRCS			= 	char/ft_isalnum.c \
 					list/ft_lstmap.c \
 					list/ft_lstnew.c \
 					list/ft_lstsize.c \
+					memory/free_str_array.c \
 					memory/ft_bzero.c \
 					memory/ft_calloc.c \
 					memory/ft_memccpy.c \
