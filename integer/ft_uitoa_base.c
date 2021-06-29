@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 11:27:16 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/04/01 11:42:45 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/06/29 11:47:19 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	check_base(char *base)
 	return (1);
 }
 
-static	size_t	len_num(uintmax_t nbr, size_t basetype)
+static	size_t	len_num(t_uint_max nbr, size_t basetype)
 {
 	size_t	len;
 
@@ -49,13 +49,13 @@ static	size_t	len_num(uintmax_t nbr, size_t basetype)
 	return (len + 1);
 }
 
-static	void	store_num(uintmax_t nbr, char *num,
+static	void	store_num(t_uint_max nbr, char *num,
 							size_t *index, char *base)
 {
 	size_t	basetype;
 
 	basetype = ft_strlen(base);
-	if (nbr <= basetype - 1 && nbr >= 0)
+	if (nbr <= basetype - 1)
 		num[(*index)++] = base[nbr];
 	else
 	{
@@ -66,7 +66,7 @@ static	void	store_num(uintmax_t nbr, char *num,
 	return ;
 }
 
-char	*ft_uitoa_base(uintmax_t n, char *base)
+char	*ft_uitoa_base(t_uint_max n, char *base)
 {
 	char				*num;
 	size_t				index;

@@ -6,7 +6,7 @@
 /*   By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 18:26:22 by jrivoire          #+#    #+#             */
-/*   Updated: 2021/04/06 17:48:25 by jrivoire         ###   ########.fr       */
+/*   Updated: 2021/06/29 11:48:06 by jrivoire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef unsigned long long	t_uint_max;
+
 char			*ft_itoa(int n);
-char			*ft_uitoa_base(uintmax_t n, char *base);
+char			*ft_uitoa_base(t_uint_max n, char *base);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strdup(const char *src);
 char			*ft_strjoin(char const *s1, char const *s2);
