@@ -6,13 +6,19 @@
 #    By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/15 15:24:55 by jrivoire          #+#    #+#              #
-#    Updated: 2021/04/06 17:46:04 by jrivoire         ###   ########.fr        #
+#    Updated: 2021/06/29 11:52:27 by jrivoire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
 
-CC				=	gcc
+ifeq ($(shell uname),Darwin)
+	CC		=	gcc
+	SED 	= 	@sed -i '' -E 's/^\.\///' .gitignore
+else
+	CC		=	clang
+	SED 	= 	@sed -i -E 's/^\.\///' .gitignore
+endif
 
 OBJS			=	$(SRCS:.c=.o)
 
@@ -73,7 +79,13 @@ FLAGS			=	-Wall -Wextra -Werror
 	$(CC) $(FLAGS) -I$(IDIR) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
-	ar rcs $(NAME) $(OBJS)
+			ar rcs $(NAME) $(OBJS)
+			@echo ".gitignore" >> .gitignore
+			@echo $(NAME) >> .gitignore
+			@find . -type f -name "*.o" >> .gitignore
+			@find . -type f -name "*.a" >> .gitignore
+			@$(SED)
+
 
 all:		$(NAME)
 
