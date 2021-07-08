@@ -6,7 +6,7 @@
 #    By: jrivoire <jrivoire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/15 15:24:55 by jrivoire          #+#    #+#              #
-#    Updated: 2021/06/29 20:48:27 by jrivoire         ###   ########.fr        #
+#    Updated: 2021/07/08 15:15:13 by jrivoire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS			= 	char/ft_isalnum.c \
 					string/ft_strlen.c \
 					string/ft_strmapi.c \
 					string/ft_strncmp.c \
+					string/ft_strcmp.c \
 					string/ft_strnstr.c \
 					string/ft_strrchr.c \
 					string/ft_strtrim.c \
